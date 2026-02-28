@@ -1,51 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
+import HeroSlider from "@/components/HeroSlider";
 
 export default function Home() {
   return (
     <main>
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#1a6b3c] via-[#1a5530] to-[#0f3320] text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.05) 35px, rgba(255,255,255,.05) 70px)"
-          }} />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 py-24 md:py-32">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm mb-6">
-              <span className="w-2 h-2 bg-[#f5a623] rounded-full animate-pulse"></span>
-              Certifié RGE Qualibat — Devis Gratuit
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Votre expert en{" "}
-              <span className="text-[#f5a623]">rénovation</span> et{" "}
-              <span className="text-[#7dd3a8]">isolation énergétique</span>
-            </h1>
-            <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
-              Chez ISOL ECO LOGIS, nous vous accompagnons dans tous vos projets d&apos;amélioration
-              et de rénovation de l&apos;habitat. Améliorez votre confort thermique, réduisez vos
-              factures d&apos;énergie et valorisez votre bien immobilier.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="btn-accent text-lg">
-                Demander un devis gratuit
-              </Link>
-              <Link
-                href="/services"
-                className="border-2 border-white text-white px-7 py-3 rounded-md font-semibold hover:bg-white hover:text-[#1a6b3c] transition-colors text-lg"
-              >
-                Nos services
-              </Link>
-            </div>
-          </div>
-        </div>
-        {/* Wave */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 60L1440 60L1440 0C1200 40 960 60 720 40C480 20 240 0 0 30L0 60Z" fill="#f9f9f7" />
-          </svg>
-        </div>
-      </section>
+      {/* Hero Slider */}
+      <HeroSlider />
 
       {/* Services Cards */}
       <section className="py-20 bg-[#f9f9f7]">
@@ -126,47 +87,106 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why choose us */}
+      {/* Notre mission — "Pourquoi nous choisir" */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="section-title">Pourquoi choisir ISOL ECO LOGIS ?</h2>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                Nous mettons notre expertise au service de votre confort et de votre satisfaction.
-                Chaque projet est traité avec le plus grand soin et le professionnalisme que vous méritez.
-              </p>
-              <div className="space-y-4">
+          {/* Section intro */}
+          <div className="text-center mb-16">
+            <span className="text-[#1a6b3c] font-semibold uppercase tracking-wider text-sm">Qui sommes-nous ?</span>
+            <h2 className="section-title mt-2">Une entreprise locale engagée pour la performance énergétique</h2>
+            <p className="section-subtitle max-w-2xl mx-auto">
+              Basée à Terres-de-Caux (Fauville-en-Caux), ISOL ECO LOGIS accompagne les particuliers et professionnels
+              de Normandie dans leurs projets d&apos;isolation et de rénovation extérieure.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Image column */}
+            <div className="lg:col-span-5 relative order-2 lg:order-1">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="https://isol-eco-logis.com/images/ISO ECO LOGIS.png"
+                  alt="Chantier ISOL ECO LOGIS"
+                  width={600}
+                  height={450}
+                  unoptimized
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent" />
+              </div>
+              {/* Decorative border */}
+              <div className="absolute -z-10 top-8 -left-8 w-full h-full border-2 border-slate-100 rounded-2xl hidden lg:block" />
+              <div className="absolute -z-10 bottom-8 -right-8 w-32 h-32 bg-green-50 rounded-full blur-2xl" />
+            </div>
+
+            {/* Content column */}
+            <div className="lg:col-span-7 flex flex-col gap-8 order-1 lg:order-2">
+              {/* Mission card */}
+              <article className="bg-slate-50 p-8 md:p-10 rounded-2xl border-l-4 border-[#1a6b3c] shadow-sm relative overflow-hidden">
+                <svg className="absolute top-0 right-0 w-32 h-32 text-slate-100 -mr-8 -mt-8" fill="currentColor" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="50" />
+                </svg>
+                <h3 className="text-2xl font-bold text-slate-800 mb-4 relative z-10">Notre mission</h3>
+                <p className="text-slate-600 mb-6 text-lg relative z-10 leading-relaxed">
+                  Depuis 2024, nous concilions{" "}
+                  <strong className="text-[#1a6b3c]">confort intérieur</strong>,{" "}
+                  <strong className="text-[#1a6b3c]">économies d&apos;énergie</strong> et respect de l&apos;environnement.
+                  Notre approche globale nous permet de traiter l&apos;enveloppe de votre bâtiment dans son ensemble.
+                </p>
+                <ul className="space-y-4 relative z-10">
+                  {[
+                    "Études thermiques et conseils personnalisés avant travaux",
+                    "Mise en œuvre par nos propres équipes qualifiées",
+                    "Accompagnement complet pour les démarches administratives",
+                    "Engagement qualité et satisfaction client",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-4">
+                      <span className="text-[#1a6b3c] bg-white shadow-sm p-1.5 rounded-full mt-0.5 flex-shrink-0">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
+                      <span className="text-slate-700 font-medium">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+
+              {/* Highlights grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {[
-                  { icon: "🏆", text: "Entreprise certifiée RGE (Qualibat)" },
-                  { icon: "📋", text: "Devis gratuits et personnalisés" },
-                  { icon: "💰", text: "Prime CEE directement déduite de votre devis" },
-                  { icon: "🤝", text: "Accompagnement complet pour les démarches administratives" },
-                  { icon: "👂", text: "Équipe à votre écoute" },
-                  { icon: "⭐", text: "Engagement qualité et satisfaction client" },
+                  {
+                    badge: "RGE",
+                    title: "Certifié QUALIBAT",
+                    desc: "Travaux éligibles aux aides de l'État",
+                  },
+                  {
+                    badge: "+2",
+                    title: "Ans d'expérience",
+                    desc: "Maîtrise technique et finitions soignées",
+                  },
+                  {
+                    badge: "76",
+                    title: "Local & Réactif",
+                    desc: "Intervention rapide en Normandie",
+                  },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 bg-green-50 rounded-xl border border-green-100">
-                    <span className="text-2xl">{item.icon}</span>
-                    <span className="text-gray-700 font-medium">{item.text}</span>
+                  <div
+                    key={i}
+                    className="flex items-start gap-4 p-5 bg-white rounded-xl shadow-sm border border-slate-100 hover:-translate-y-1 transition-transform duration-300"
+                  >
+                    <div className="bg-slate-800 text-white font-bold p-3 rounded-lg text-center min-w-[60px] flex items-center justify-center text-lg flex-shrink-0">
+                      {item.badge}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-800 text-sm mb-1">{item.title}</h4>
+                      <p className="text-slate-500 text-xs leading-snug">{item.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
-            </div>
-            <div className="bg-gradient-to-br from-[#1a6b3c] to-[#0f3320] rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-6">Aides financières disponibles</h3>
-              <div className="bg-white/10 rounded-xl p-6 mb-6">
-                <div className="text-4xl mb-3">💶</div>
-                <h4 className="text-xl font-bold text-[#f5a623] mb-2">Prime CEE</h4>
-                <p className="text-gray-200 text-sm leading-relaxed">
-                  Grâce à notre certification RGE, vous pouvez bénéficier des aides de l&apos;État
-                  comme la Prime CEE. Nous nous occupons des démarches pour vous simplifier la vie.
-                </p>
-              </div>
-              <div className="bg-white/10 rounded-xl p-4 text-center">
-                <p className="text-[#7dd3a8] font-semibold mb-1">✔ Certifié RGE Qualibat</p>
-                <p className="text-sm text-gray-300">La prime est directement déduite de votre devis</p>
-              </div>
-              <Link href="/contact" className="btn-accent mt-6 w-full text-center block">
+
+              <Link href="/contact" className="btn-accent text-lg text-center">
                 Obtenir mon devis gratuit
               </Link>
             </div>

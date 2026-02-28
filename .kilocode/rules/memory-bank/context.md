@@ -88,3 +88,4 @@ export async function GET() {
 | 2026-02-28 | Built full 5-page website for ISOL ECO LOGIS (rénovation & isolation énergétique) |
 | 2026-02-28 | Added Références page with 9 project cards, testimonials, stats and navigation links |
 | 2026-02-28 | Redesigned Références page to match original site: photo cards with hover overlay, gallery modal, badges on images, real project data from isol-eco-logis.com |
+| 2026-02-28 | Added HeroSlider component (3 slides with images from isol-eco-logis.com, auto-play, dot controls); replaced "Aides financières disponibles" section with "Notre mission" section matching original site (image + mission card + 3 stats badges: RGE, +2 ans, 76) |
