@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/isolation-exterieure", label: "Isolation Extérieure" },
   { href: "/ravalement-facade", label: "Ravalement de Façade" },
   { href: "/renovation-interieure", label: "Rénovation Intérieure" },
+  { href: "/references", label: "Références" },
   { href: "/contact", label: "Contact" },
 ];
 

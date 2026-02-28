@@ -55,6 +55,7 @@ export default function Footer() {
               <li><Link href="/isolation-exterieure" className="hover:text-[#2d9e5f] transition-colors">Isolation par l&apos;Extérieur</Link></li>
               <li><Link href="/ravalement-facade" className="hover:text-[#2d9e5f] transition-colors">Ravalement de Façade</Link></li>
               <li><Link href="/renovation-interieure" className="hover:text-[#2d9e5f] transition-colors">Rénovation Intérieure</Link></li>
+              <li><Link href="/references" className="hover:text-[#2d9e5f] transition-colors">Références</Link></li>
               <li><Link href="/contact" className="hover:text-[#2d9e5f] transition-colors">Contact</Link></li>
             </ul>
           </div>
