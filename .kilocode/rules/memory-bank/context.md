@@ -86,3 +86,4 @@ export async function GET() {
 |------|---------|
 | Initial | Template created with base setup |
 | 2026-02-28 | Built full 5-page website for ISOL ECO LOGIS (rénovation & isolation énergétique) |
+| 2026-02-28 | Added Références page with 9 project cards, testimonials, stats and navigation links |
