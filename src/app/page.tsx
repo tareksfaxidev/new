@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import HeroSlider from "@/components/HeroSlider";
+import ContactForm from "@/app/contact/ContactForm";
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
       <section className="py-20 bg-[#f9f9f7]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="section-title">Nos Prestations</h2>
+            <span className="text-[#1a6b3c] font-semibold uppercase tracking-wider text-sm">Ce que nous faisons</span>
+            <h2 className="section-title mt-2">Nos Prestations</h2>
             <p className="section-subtitle max-w-2xl mx-auto">
               Des solutions complètes pour améliorer la performance énergétique et l&apos;esthétique de votre habitat.
             </p>
@@ -20,9 +22,18 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* ITE */}
             <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow overflow-hidden group">
-              <div className="bg-gradient-to-br from-[#1a6b3c] to-[#2d9e5f] p-8 text-white text-center">
-                <div className="text-5xl mb-3">🏠</div>
-                <h3 className="text-xl font-bold">Isolation par l&apos;Extérieur</h3>
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src="https://isol-eco-logis.com/images/slide1.jpg"
+                  alt="Isolation par l'extérieur"
+                  fill
+                  unoptimized
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a6b3c]/80 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold">Isolation par l&apos;Extérieur</h3>
+                </div>
               </div>
               <div className="p-6">
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
@@ -42,9 +53,18 @@ export default function Home() {
 
             {/* Ravalement */}
             <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow overflow-hidden group">
-              <div className="bg-gradient-to-br from-[#2d5a8e] to-[#4a7fc1] p-8 text-white text-center">
-                <div className="text-5xl mb-3">🎨</div>
-                <h3 className="text-xl font-bold">Ravalement de Façade</h3>
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src="https://isol-eco-logis.com/images/slide2.jpg"
+                  alt="Ravalement de façade"
+                  fill
+                  unoptimized
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2d5a8e]/80 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold">Ravalement de Façade</h3>
+                </div>
               </div>
               <div className="p-6">
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
@@ -64,9 +84,18 @@ export default function Home() {
 
             {/* Rénovation intérieure */}
             <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow overflow-hidden group">
-              <div className="bg-gradient-to-br from-[#8e4a2d] to-[#c17a4a] p-8 text-white text-center">
-                <div className="text-5xl mb-3">🛠️</div>
-                <h3 className="text-xl font-bold">Rénovation Intérieure</h3>
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src="https://isol-eco-logis.com/images/slide3.jpg"
+                  alt="Rénovation intérieure"
+                  fill
+                  unoptimized
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#8e4a2d]/80 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold">Rénovation Intérieure</h3>
+                </div>
               </div>
               <div className="p-6">
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
@@ -213,21 +242,227 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Notre processus */}
       <section className="py-20 bg-[#f9f9f7]">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="section-title">Prêt à améliorer votre habitat ?</h2>
-          <p className="section-subtitle">
-            Contactez-nous dès aujourd&apos;hui pour un devis gratuit et personnalisé.
-            Notre équipe est à votre écoute pour répondre à toutes vos questions.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="tel:0612062868" className="btn-primary text-lg">
-              📞 06 12 06 28 68
-            </a>
-            <Link href="/contact" className="btn-accent text-lg">
-              Nous contacter
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-14">
+            <span className="text-[#1a6b3c] font-semibold uppercase tracking-wider text-sm">Simple et rapide</span>
+            <h2 className="section-title mt-2">Comment ça marche ?</h2>
+            <p className="section-subtitle max-w-xl mx-auto">
+              De la prise de contact à la réception des travaux, nous vous accompagnons à chaque étape.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                step: "01",
+                icon: "📞",
+                title: "Prise de contact",
+                desc: "Appelez-nous ou remplissez le formulaire. Nous vous répondons sous 24h.",
+              },
+              {
+                step: "02",
+                icon: "🔍",
+                title: "Visite & diagnostic",
+                desc: "Nos experts se déplacent gratuitement pour évaluer votre projet.",
+              },
+              {
+                step: "03",
+                icon: "📋",
+                title: "Devis personnalisé",
+                desc: "Vous recevez un devis détaillé, transparent et sans engagement.",
+              },
+              {
+                step: "04",
+                icon: "🏗️",
+                title: "Réalisation",
+                desc: "Nos équipes qualifiées réalisent les travaux dans les délais convenus.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#1a6b3c] text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">
+                  {item.step}
+                </div>
+                <div className="text-4xl mb-4 mt-2">{item.icon}</div>
+                <h3 className="font-bold text-gray-800 mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                {i < 3 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-4 text-gray-300 text-2xl z-10">→</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Témoignages */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-14">
+            <span className="text-[#1a6b3c] font-semibold uppercase tracking-wider text-sm">Ils nous font confiance</span>
+            <h2 className="section-title mt-2">Avis de nos clients</h2>
+            <p className="section-subtitle max-w-xl mx-auto">
+              La satisfaction de nos clients est notre meilleure récompense.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Marie-Claire D.",
+                location: "Fauville-en-Caux",
+                rating: 5,
+                text: "Excellent travail ! L'équipe d'ISOL ECO LOGIS a réalisé l'isolation extérieure de notre maison en un temps record. Résultat impeccable et économies d'énergie visibles dès la première facture.",
+                service: "Isolation par l'Extérieur",
+              },
+              {
+                name: "Jean-Pierre M.",
+                location: "Yvetot",
+                rating: 5,
+                text: "Très professionnel du début à la fin. Le ravalement de notre façade a transformé notre maison. Les artisans sont soigneux, ponctuels et le résultat est magnifique. Je recommande vivement !",
+                service: "Ravalement de Façade",
+              },
+              {
+                name: "Sophie L.",
+                location: "Bolbec",
+                rating: 5,
+                text: "Rénovation complète de notre salon et cuisine. Travail de qualité, finitions parfaites. L'équipe a été à l'écoute de nos souhaits et a su nous conseiller. Très satisfaite !",
+                service: "Rénovation Intérieure",
+              },
+            ].map((review, i) => (
+              <div key={i} className="bg-[#f9f9f7] rounded-2xl p-8 border border-gray-100 relative">
+                <div className="text-[#f5a623] text-2xl mb-4">
+                  {"★".repeat(review.rating)}
+                </div>
+                <p className="text-gray-700 italic mb-6 leading-relaxed">&ldquo;{review.text}&rdquo;</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-[#1a6b3c] text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                    {review.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-bold text-gray-800 text-sm">{review.name}</p>
+                    <p className="text-xs text-gray-500">{review.location} · {review.service}</p>
+                  </div>
+                </div>
+                <div className="absolute top-6 right-6 text-gray-200 text-5xl font-serif leading-none">&ldquo;</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Réalisations récentes */}
+      <section className="py-20 bg-[#f9f9f7]">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-14">
+            <span className="text-[#1a6b3c] font-semibold uppercase tracking-wider text-sm">Nos chantiers</span>
+            <h2 className="section-title mt-2">Réalisations Récentes</h2>
+            <p className="section-subtitle max-w-xl mx-auto">
+              Découvrez quelques-uns de nos projets réalisés en Normandie.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                src: "https://isol-eco-logis.com/images/slide1.jpg",
+                alt: "Isolation extérieure maison individuelle",
+                label: "ITE — Maison individuelle",
+                location: "Seine-Maritime",
+              },
+              {
+                src: "https://isol-eco-logis.com/images/slide2.jpg",
+                alt: "Ravalement de façade",
+                label: "Ravalement — Façade rénovée",
+                location: "Normandie",
+              },
+              {
+                src: "https://isol-eco-logis.com/images/slide3.jpg",
+                alt: "Isolation par soufflage",
+                label: "Isolation soufflage — Combles",
+                location: "Seine-Maritime",
+              },
+            ].map((item, i) => (
+              <div key={i} className="relative rounded-2xl overflow-hidden shadow-md group h-64">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  unoptimized
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <p className="font-bold text-sm">{item.label}</p>
+                  <p className="text-xs text-gray-300">📍 {item.location}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link href="/references" className="btn-primary text-lg">
+              Voir toutes nos réalisations →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact form section */}
+      <section className="py-20 bg-white" id="contact">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            {/* Left: info */}
+            <div>
+              <span className="text-[#1a6b3c] font-semibold uppercase tracking-wider text-sm">Devis gratuit</span>
+              <h2 className="section-title mt-2">Contactez-nous</h2>
+              <p className="text-gray-600 mb-8 leading-relaxed">
+                Vous avez un projet de rénovation ou d&apos;isolation ? Remplissez le formulaire
+                et nous vous recontacterons rapidement pour étudier votre projet et vous proposer
+                un devis personnalisé et sans engagement.
+              </p>
+
+              <div className="space-y-5 mb-8">
+                <div className="flex items-center gap-4">
+                  <div className="bg-[#1a6b3c] text-white rounded-full w-12 h-12 flex items-center justify-center text-xl flex-shrink-0">📞</div>
+                  <div>
+                    <p className="font-bold text-gray-800">Téléphone</p>
+                    <a href="tel:0612062868" className="text-[#1a6b3c] hover:underline font-medium">06 12 06 28 68</a>
+                    <span className="text-gray-400 mx-2">·</span>
+                    <a href="tel:0634974478" className="text-[#1a6b3c] hover:underline font-medium">06 34 97 44 78</a>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="bg-[#1a6b3c] text-white rounded-full w-12 h-12 flex items-center justify-center text-xl flex-shrink-0">✉️</div>
+                  <div>
+                    <p className="font-bold text-gray-800">Email</p>
+                    <a href="mailto:isol-eco-logis@outlook.com" className="text-[#1a6b3c] hover:underline font-medium">isol-eco-logis@outlook.com</a>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="bg-[#1a6b3c] text-white rounded-full w-12 h-12 flex items-center justify-center text-xl flex-shrink-0">📍</div>
+                  <div>
+                    <p className="font-bold text-gray-800">Zone d&apos;intervention</p>
+                    <p className="text-gray-600">76640 Terres-de-Caux — Normandie et alentours</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-green-50 border border-green-200 rounded-xl p-5">
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">🏆</span>
+                  <div>
+                    <p className="font-bold text-[#1a6b3c] mb-1">Certifié RGE Qualibat</p>
+                    <p className="text-sm text-gray-600">
+                      Notre certification vous permet de bénéficier des aides de l&apos;État (Prime CEE).
+                      Nous gérons toutes les démarches administratives pour vous.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: form */}
+            <div>
+              <ContactForm />
+            </div>
           </div>
         </div>
       </section>

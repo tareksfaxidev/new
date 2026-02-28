@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,9 +11,18 @@ export const metadata: Metadata = {
 export default function IsolationExterieurePage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1a6b3c] to-[#0f3320] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4">
+      {/* Hero with image */}
+      <section className="relative text-white py-28 overflow-hidden">
+        <Image
+          src="https://isol-eco-logis.com/images/slide1.jpg"
+          alt="Isolation par l'extérieur"
+          fill
+          unoptimized
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a6b3c]/90 to-[#0f3320]/80" />
+        <div className="relative max-w-7xl mx-auto px-4">
           <div className="max-w-3xl">
             <div className="text-sm text-[#7dd3a8] mb-3 font-medium">
               <Link href="/" className="hover:underline">Accueil</Link> &rsaquo;{" "}
@@ -25,6 +35,12 @@ export default function IsolationExterieurePage() {
               Améliorez la performance énergétique de votre logement tout en modernisant votre façade.
               La solution la plus efficace pour supprimer les ponts thermiques.
             </p>
+            <div className="flex flex-wrap gap-4 mt-8">
+              <a href="tel:0612062868" className="btn-accent text-lg">📞 Devis gratuit</a>
+              <Link href="/contact" className="border-2 border-white text-white px-7 py-3 rounded-md font-semibold hover:bg-white hover:text-[#1a6b3c] transition-colors">
+                Formulaire de contact
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -70,7 +86,7 @@ export default function IsolationExterieurePage() {
         </div>
       </section>
 
-      {/* Solutions */}
+      {/* Solutions with images */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="section-title text-center">Nos Solutions d&apos;Isolation</h2>
@@ -87,6 +103,7 @@ export default function IsolationExterieurePage() {
                 features: ["Haute résistance thermique", "Légèreté et facilité de pose", "Excellent rapport qualité/prix", "Durabilité prouvée"],
                 color: "border-[#1a6b3c]",
                 headerColor: "bg-[#1a6b3c]",
+                img: "https://isol-eco-logis.com/images/slide1.jpg",
               },
               {
                 icon: "🌿",
@@ -96,6 +113,7 @@ export default function IsolationExterieurePage() {
                 features: ["Matériaux biosourcés", "Régulation hygrométrique", "Performances acoustiques", "Respect de l'environnement"],
                 color: "border-[#2d9e5f]",
                 headerColor: "bg-[#2d9e5f]",
+                img: "https://isol-eco-logis.com/images/slide3.jpg",
               },
               {
                 icon: "🏗️",
@@ -105,13 +123,24 @@ export default function IsolationExterieurePage() {
                 features: ["Aspect moderne et soigné", "Protection contre les intempéries", "Entretien facile", "Large choix de coloris"],
                 color: "border-[#8e4a2d]",
                 headerColor: "bg-[#8e4a2d]",
+                img: "https://isol-eco-logis.com/images/slide2.jpg",
               },
             ].map((solution) => (
               <div key={solution.title} className={`bg-white rounded-2xl border-2 ${solution.color} overflow-hidden shadow-md hover:shadow-xl transition-shadow`}>
-                <div className={`${solution.headerColor} text-white p-6 text-center`}>
-                  <div className="text-4xl mb-2">{solution.icon}</div>
-                  <h3 className="text-xl font-bold">{solution.title}</h3>
-                  <p className="text-sm text-white/80">{solution.subtitle}</p>
+                <div className="relative h-40 overflow-hidden">
+                  <Image
+                    src={solution.img}
+                    alt={solution.title}
+                    fill
+                    unoptimized
+                    className="object-cover"
+                  />
+                  <div className={`absolute inset-0 ${solution.headerColor} opacity-70`} />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
+                    <div className="text-4xl mb-2">{solution.icon}</div>
+                    <h3 className="text-xl font-bold text-center">{solution.title}</h3>
+                    <p className="text-sm text-white/80">{solution.subtitle}</p>
+                  </div>
                 </div>
                 <div className="p-6">
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">{solution.desc}</p>
@@ -144,6 +173,35 @@ export default function IsolationExterieurePage() {
                 <div className="text-4xl mb-3">{item.icon}</div>
                 <h3 className="font-bold text-[#1a6b3c] mb-2">{item.title}</h3>
                 <p className="text-sm text-gray-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Chantier photo gallery */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="section-title text-center">Nos Chantiers ITE</h2>
+          <p className="section-subtitle text-center max-w-xl mx-auto">
+            Quelques exemples de réalisations d&apos;isolation par l&apos;extérieur en Normandie.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
+            {[
+              { src: "https://isol-eco-logis.com/images/slide1.jpg", alt: "Chantier ITE maison individuelle", label: "Maison individuelle — Seine-Maritime" },
+              { src: "https://isol-eco-logis.com/images/slide3.jpg", alt: "Isolation soufflage combles", label: "Isolation soufflage — Combles perdus" },
+              { src: "https://isol-eco-logis.com/images/ISO ECO LOGIS.png", alt: "Équipe ISOL ECO LOGIS", label: "Notre équipe sur chantier" },
+            ].map((item, i) => (
+              <div key={i} className="relative rounded-2xl overflow-hidden h-56 shadow-md group">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  unoptimized
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <p className="absolute bottom-4 left-4 text-white text-sm font-semibold">{item.label}</p>
               </div>
             ))}
           </div>

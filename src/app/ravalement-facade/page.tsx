@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,9 +11,18 @@ export const metadata: Metadata = {
 export default function RavalementFacadePage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-[#2d5a8e] to-[#1a3a5c] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4">
+      {/* Hero with image */}
+      <section className="relative text-white py-28 overflow-hidden">
+        <Image
+          src="https://isol-eco-logis.com/images/slide2.jpg"
+          alt="Ravalement de façade"
+          fill
+          unoptimized
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2d5a8e]/90 to-[#1a3a5c]/80" />
+        <div className="relative max-w-7xl mx-auto px-4">
           <div className="max-w-3xl">
             <div className="text-sm text-[#7db8e8] mb-3 font-medium">
               <Link href="/" className="hover:underline">Accueil</Link> &rsaquo;{" "}
@@ -25,6 +35,12 @@ export default function RavalementFacadePage() {
               Redonnez vie à votre maison ! Nos experts en ravalement de façade vous proposent
               des solutions adaptées pour embellir et protéger votre habitation durablement.
             </p>
+            <div className="flex flex-wrap gap-4 mt-8">
+              <a href="tel:0612062868" className="btn-accent text-lg">📞 Devis gratuit</a>
+              <Link href="/contact" className="border-2 border-white text-white px-7 py-3 rounded-md font-semibold hover:bg-white hover:text-[#2d5a8e] transition-colors">
+                Formulaire de contact
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -73,7 +89,7 @@ export default function RavalementFacadePage() {
         </div>
       </section>
 
-      {/* Prestations */}
+      {/* Prestations with images */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="section-title text-center">Nos Prestations de Ravalement</h2>
@@ -93,6 +109,7 @@ export default function RavalementFacadePage() {
                   "Finitions soignées",
                 ],
                 color: "bg-[#2d5a8e]",
+                img: "https://isol-eco-logis.com/images/slide2.jpg",
               },
               {
                 icon: "🔨",
@@ -105,6 +122,7 @@ export default function RavalementFacadePage() {
                   "Remise en état totale",
                 ],
                 color: "bg-[#1a3a5c]",
+                img: "https://isol-eco-logis.com/images/slide1.jpg",
               },
               {
                 icon: "🖌️",
@@ -117,12 +135,23 @@ export default function RavalementFacadePage() {
                   "Garantie décennale",
                 ],
                 color: "bg-[#4a7fc1]",
+                img: "https://isol-eco-logis.com/images/slide3.jpg",
               },
             ].map((prestation) => (
               <div key={prestation.title} className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow overflow-hidden border border-gray-100">
-                <div className={`${prestation.color} text-white p-6 text-center`}>
-                  <div className="text-4xl mb-2">{prestation.icon}</div>
-                  <h3 className="text-xl font-bold">{prestation.title}</h3>
+                <div className="relative h-40 overflow-hidden">
+                  <Image
+                    src={prestation.img}
+                    alt={prestation.title}
+                    fill
+                    unoptimized
+                    className="object-cover"
+                  />
+                  <div className={`absolute inset-0 ${prestation.color} opacity-70`} />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
+                    <div className="text-4xl mb-2">{prestation.icon}</div>
+                    <h3 className="text-xl font-bold text-center">{prestation.title}</h3>
+                  </div>
                 </div>
                 <div className="p-6">
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">{prestation.desc}</p>
@@ -140,8 +169,51 @@ export default function RavalementFacadePage() {
         </div>
       </section>
 
-      {/* Process */}
+      {/* Chantier gallery */}
       <section className="py-16 bg-[#f9f9f7]">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="section-title text-center">Nos Réalisations</h2>
+          <p className="section-subtitle text-center max-w-xl mx-auto">
+            Quelques exemples de ravalement réalisés en Normandie.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
+            <div className="relative rounded-2xl overflow-hidden h-72 shadow-md group">
+              <Image
+                src="https://isol-eco-logis.com/images/slide2.jpg"
+                alt="Ravalement façade maison"
+                fill
+                unoptimized
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <p className="absolute bottom-4 left-4 text-white font-semibold">Ravalement complet — Normandie</p>
+            </div>
+            <div className="grid grid-cols-2 gap-6">
+              {[
+                { src: "https://isol-eco-logis.com/images/slide1.jpg", label: "Enduit décoratif" },
+                { src: "https://isol-eco-logis.com/images/slide3.jpg", label: "Peinture façade" },
+                { src: "https://isol-eco-logis.com/images/ISO ECO LOGIS.png", label: "Équipe sur chantier" },
+                { src: "https://isol-eco-logis.com/images/slide2.jpg", label: "Finitions soignées" },
+              ].map((item, i) => (
+                <div key={i} className="relative rounded-xl overflow-hidden h-28 shadow-sm group">
+                  <Image
+                    src={item.src}
+                    alt={item.label}
+                    fill
+                    unoptimized
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <p className="absolute bottom-2 left-2 text-white text-xs font-semibold">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="section-title text-center">Notre Processus d&apos;Intervention</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
