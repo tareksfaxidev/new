@@ -1,141 +1,118 @@
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
 
 const projects = [
   {
-    id: 1,
-    category: "Isolation par l'Extérieur",
-    categoryColor: "from-[#1a6b3c] to-[#2d9e5f]",
-    badgeColor: "bg-green-100 text-green-800",
-    icon: "🏠",
-    title: "ITE — Maison individuelle",
-    location: "Terres-de-Caux (76640)",
+    id: "projet1",
+    title: "Projet 1",
+    category: "Ravalement",
+    location: "Fécamp",
     description:
-      "Isolation thermique par l'extérieur d'une maison de 120 m². Pose d'isolant synthétique haute performance avec enduit de finition teinté. Réduction des pertes de chaleur de 28 % et prime CEE déduite.",
-    tags: ["ITE", "Enduit", "Prime CEE"],
+      "Traitement anti-mousse, réparation des fissures et application d'une peinture pliolite pour une maison de ville.",
+    date: "Janvier 2025",
+    coverImage: "https://isol-eco-logis.com/images/projet1-1.jpeg",
+    gallery: [
+      { src: "https://isol-eco-logis.com/images/projet1-1.jpeg", caption: "Façade après rénovation complète" },
+      { src: "https://isol-eco-logis.com/images/projet1-2.jpeg", caption: "Traitement des fissures et préparation" },
+      { src: "https://isol-eco-logis.com/images/projet1-3.jpeg", caption: "Détail des finitions" },
+    ],
   },
   {
-    id: 2,
-    category: "Isolation par l'Extérieur",
-    categoryColor: "from-[#1a6b3c] to-[#2d9e5f]",
-    badgeColor: "bg-green-100 text-green-800",
-    icon: "🏠",
-    title: "ITE — Pavillon années 70",
-    location: "Yvetot (76190)",
+    id: "projet2",
+    title: "Projet 2",
+    category: "ITE",
+    location: "Yvetot",
     description:
-      "Rénovation énergétique complète d'un pavillon des années 70. Isolation par l'extérieur avec bardage bois, remplacement des menuiseries et traitement des ponts thermiques.",
-    tags: ["ITE", "Bardage bois", "Rénovation globale"],
+      "Pose de panneaux polystyrène 140mm et finition enduit gratté ton pierre. Gain énergétique de 35%.",
+    date: "Décembre 2024",
+    coverImage: "https://isol-eco-logis.com/images/projet2-1.jpeg",
+    gallery: [
+      { src: "https://isol-eco-logis.com/images/projet2-1.jpeg", caption: "Isolation Thermique par l'Extérieur terminée" },
+      { src: "https://isol-eco-logis.com/images/projet2-2.jpeg", caption: "Pose des panneaux isolants" },
+      { src: "https://isol-eco-logis.com/images/projet2-3.jpeg", caption: "Pose des panneaux isolants" },
+    ],
   },
   {
-    id: 3,
-    category: "Ravalement de Façade",
-    categoryColor: "from-[#2d5a8e] to-[#4a7fc1]",
-    badgeColor: "bg-blue-100 text-blue-800",
-    icon: "🎨",
-    title: "Ravalement — Maison de maître",
-    location: "Fécamp (76400)",
+    id: "projet3",
+    title: "Projet 3",
+    category: "Combles",
+    location: "Le Havre",
     description:
-      "Ravalement complet d'une maison de maître avec nettoyage haute pression, traitement des fissures, application d'un enduit monocouche et peinture de finition. Résultat impeccable.",
-    tags: ["Ravalement", "Enduit monocouche", "Peinture"],
+      "Isolation de combles perdus sur 85m² avec laine minérale biosourcée. Intervention réalisée en une demi-journée.",
+    date: "Février 2025",
+    coverImage: "https://isol-eco-logis.com/images/projet3-1.jpeg",
+    gallery: [
+      { src: "https://isol-eco-logis.com/images/projet3-1.jpeg", caption: "Soufflage de laine minérale dans les combles" },
+      { src: "https://isol-eco-logis.com/images/projet3-2.jpeg", caption: "Trappe de visite isolée" },
+      { src: "https://isol-eco-logis.com/images/projet3-3.jpeg", caption: "Vérification de l'épaisseur d'isolant" },
+    ],
   },
   {
-    id: 4,
-    category: "Ravalement de Façade",
-    categoryColor: "from-[#2d5a8e] to-[#4a7fc1]",
-    badgeColor: "bg-blue-100 text-blue-800",
-    icon: "🎨",
-    title: "Ravalement — Immeuble collectif",
-    location: "Le Havre (76600)",
+    id: "projet4",
+    title: "Projet 4",
+    category: "Intérieur",
+    location: "Rouen",
     description:
-      "Ravalement de façade d'un immeuble de 6 appartements. Nettoyage, rebouchage, application d'un enduit projeté et peinture façade. Travaux réalisés en 10 jours avec échafaudage sécurisé.",
-    tags: ["Ravalement", "Immeuble", "Enduit projeté"],
+      "Isolation phonique des murs mitoyens, pose de placo et peinture complète murs et plafonds.",
+    date: "Novembre 2024",
+    coverImage: "https://isol-eco-logis.com/images/projet4-1.jpeg",
+    gallery: [
+      { src: "https://isol-eco-logis.com/images/projet4-1.jpeg", caption: "Rénovation complète du salon" },
+      { src: "https://isol-eco-logis.com/images/projet4-2.jpeg", caption: "Pose de cloisons sèches" },
+      { src: "https://isol-eco-logis.com/images/projet4-3.jpeg", caption: "Cuisine : peinture et finitions" },
+      { src: "https://isol-eco-logis.com/images/projet4-4.jpeg", caption: "Chambre : isolation phonique" },
+      { src: "https://isol-eco-logis.com/images/projet4-5.jpeg", caption: "Salle de bain rénovée" },
+      { src: "https://isol-eco-logis.com/images/projet4-6.jpeg", caption: "Rénovation complète du salon" },
+      { src: "https://isol-eco-logis.com/images/projet4-7.jpeg", caption: "Pose de cloisons sèches" },
+      { src: "https://isol-eco-logis.com/images/projet4-8.jpeg", caption: "Cuisine : peinture et finitions" },
+      { src: "https://isol-eco-logis.com/images/projet4-10.jpeg", caption: "Chambre : isolation phonique" },
+    ],
   },
   {
-    id: 5,
-    category: "Rénovation Intérieure",
-    categoryColor: "from-[#8e4a2d] to-[#c17a4a]",
-    badgeColor: "bg-orange-100 text-orange-800",
-    icon: "🛠️",
-    title: "Rénovation complète — Appartement",
-    location: "Rouen (76000)",
+    id: "projet5",
+    title: "Projet 5",
+    category: "Sous-sol",
+    location: "Bolbec",
     description:
-      "Rénovation intérieure complète d'un appartement de 65 m² : peinture murs et plafonds, pose de parquet flottant, réfection de la salle de bain et de la cuisine. Finitions soignées.",
-    tags: ["Peinture", "Parquet", "Salle de bain"],
-  },
-  {
-    id: 6,
-    category: "Rénovation Intérieure",
-    categoryColor: "from-[#8e4a2d] to-[#c17a4a]",
-    badgeColor: "bg-orange-100 text-orange-800",
-    icon: "🛠️",
-    title: "Réfection — Maison ancienne",
-    location: "Bolbec (76210)",
-    description:
-      "Réfection intérieure d'une maison ancienne : traitement de l'humidité, enduit de lissage, peinture, pose de carrelage et remplacement des plinthes. Travaux livrés dans les délais.",
-    tags: ["Enduit", "Carrelage", "Traitement humidité"],
-  },
-  {
-    id: 7,
-    category: "Isolation par l'Extérieur",
-    categoryColor: "from-[#1a6b3c] to-[#2d9e5f]",
-    badgeColor: "bg-green-100 text-green-800",
-    icon: "🏠",
-    title: "ITE + Ravalement — Maison mitoyenne",
-    location: "Lillebonne (76170)",
-    description:
-      "Chantier combiné : isolation par l'extérieur sur les murs pignons et ravalement de façade sur la partie avant. Travaux coordonnés pour un résultat homogène et une économie d'énergie maximale.",
-    tags: ["ITE", "Ravalement", "Chantier combiné"],
-  },
-  {
-    id: 8,
-    category: "Ravalement de Façade",
-    categoryColor: "from-[#2d5a8e] to-[#4a7fc1]",
-    badgeColor: "bg-blue-100 text-blue-800",
-    icon: "🎨",
-    title: "Peinture façade — Maison contemporaine",
-    location: "Caudebec-en-Caux (76490)",
-    description:
-      "Nettoyage et peinture de façade d'une maison contemporaine. Application d'une peinture façade microporeuse haute durabilité, résistante aux intempéries normandes. Garantie 10 ans.",
-    tags: ["Peinture façade", "Nettoyage", "Garantie 10 ans"],
-  },
-  {
-    id: 9,
-    category: "Rénovation Intérieure",
-    categoryColor: "from-[#8e4a2d] to-[#c17a4a]",
-    badgeColor: "bg-orange-100 text-orange-800",
-    icon: "🛠️",
-    title: "Peinture intérieure — Maison neuve",
-    location: "Saint-Romain-de-Colbosc (76430)",
-    description:
-      "Peinture intérieure complète d'une maison neuve de 140 m² : préparation des supports, application de deux couches de peinture mate sur murs et plafonds, finitions soignées dans toutes les pièces.",
-    tags: ["Peinture", "Maison neuve", "Finitions"],
+      "Pose de panneaux isolants en sous-face de dalle pour supprimer la sensation de sol froid.",
+    date: "Octobre 2024",
+    coverImage: "https://isol-eco-logis.com/images/projet5-1.jpeg",
+    gallery: [
+      { src: "https://isol-eco-logis.com/images/projet5-1.jpeg", caption: "Isolation sous dalle béton" },
+      { src: "https://isol-eco-logis.com/images/projet5-2.jpeg", caption: "Fixation des panneaux isolants" },
+      { src: "https://isol-eco-logis.com/images/projet5-3.jpeg", caption: "Sous-sol isolé et propre" },
+    ],
   },
 ];
 
-const testimonials = [
-  {
-    name: "Marie L.",
-    location: "Terres-de-Caux",
-    rating: 5,
-    text: "Équipe très professionnelle et sérieuse. Les travaux d'isolation ont été réalisés dans les délais et le résultat est parfait. Ma maison est beaucoup plus chaude cet hiver !",
-    service: "Isolation par l'Extérieur",
-  },
-  {
-    name: "Jean-Pierre M.",
-    location: "Yvetot",
-    rating: 5,
-    text: "Excellent travail pour le ravalement de ma façade. Propre, rapide et soigné. Je recommande vivement ISOL ECO LOGIS à tous mes voisins.",
-    service: "Ravalement de Façade",
-  },
-  {
-    name: "Sophie D.",
-    location: "Le Havre",
-    rating: 5,
-    text: "Très satisfaite de la rénovation de mon appartement. L'équipe a été à l'écoute de mes souhaits et le rendu final dépasse mes attentes. Merci !",
-    service: "Rénovation Intérieure",
-  },
-];
+type GalleryImage = { src: string; caption: string };
 
 export default function ReferencesPage() {
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const [galleryImages, setGalleryImages] = useState<GalleryImage[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  function openGallery(images: GalleryImage[], index = 0) {
+    setGalleryImages(images);
+    setCurrentIndex(index);
+    setGalleryOpen(true);
+  }
+
+  function closeGallery() {
+    setGalleryOpen(false);
+  }
+
+  function prevImage() {
+    setCurrentIndex((i) => (i - 1 + galleryImages.length) % galleryImages.length);
+  }
+
+  function nextImage() {
+    setCurrentIndex((i) => (i + 1) % galleryImages.length);
+  }
+
   return (
     <main>
       {/* Hero */}
@@ -149,169 +126,197 @@ export default function ReferencesPage() {
             }}
           />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 py-20 md:py-28">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm mb-6">
-              <span className="w-2 h-2 bg-[#f5a623] rounded-full"></span>
-              Nos réalisations — Projets terminés
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-              Nos <span className="text-[#f5a623]">Références</span> &{" "}
-              <span className="text-[#7dd3a8]">Projets</span>
-            </h1>
-            <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
-              Découvrez nos chantiers réalisés en Seine-Maritime et dans les départements voisins.
-              Isolation, ravalement, rénovation intérieure — chaque projet témoigne de notre
-              engagement qualité.
-            </p>
-          </div>
+        <div className="relative max-w-7xl mx-auto px-4 py-20 md:py-28 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            Nos <span className="text-[#f5a623]">Réalisations</span>
+          </h1>
+          <p className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl mx-auto">
+            Découvrez nos derniers chantiers d&apos;isolation et de rénovation en Normandie.
+            Cliquez sur les projets pour voir les photos.
+          </p>
         </div>
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M0 60L1440 60L1440 0C1200 40 960 60 720 40C480 20 240 0 0 30L0 60Z"
-              fill="#f9f9f7"
+              fill="#f8fafc"
             />
           </svg>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-12 bg-[#f9f9f7]">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {[
-              { value: "9+", label: "Projets réalisés" },
-              { value: "3", label: "Types de prestations" },
-              { value: "76", label: "Seine-Maritime" },
-              { value: "100%", label: "Clients satisfaits" },
-            ].map((stat, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
-              >
-                <div className="text-3xl font-bold text-[#1a6b3c] mb-1">{stat.value}</div>
-                <div className="text-sm text-gray-500">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Projects Grid */}
-      <section className="py-16 bg-[#f9f9f7]">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Nos Projets</h2>
-            <p className="section-subtitle max-w-2xl mx-auto">
-              Chaque chantier est réalisé avec soin, dans le respect des délais et de votre budget.
-            </p>
-          </div>
-
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
-              <div
+              <article
                 key={project.id}
-                className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full"
               >
-                {/* Card header */}
+                {/* Image with overlay */}
                 <div
-                  className={`bg-gradient-to-br ${project.categoryColor} p-6 text-white`}
+                  className="relative h-64 overflow-hidden cursor-pointer group"
+                  onClick={() => openGallery(project.gallery, 0)}
                 >
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <span className="text-3xl">{project.icon}</span>
-                      <h3 className="text-lg font-bold mt-2 leading-tight">{project.title}</h3>
-                      <p className="text-sm text-white/80 mt-1">📍 {project.location}</p>
-                    </div>
-                    <span
-                      className={`text-xs font-semibold px-2 py-1 rounded-full ${project.badgeColor} shrink-0 ml-2`}
-                    >
-                      {project.category.split(" ")[0]}
+                  <Image
+                    src={project.coverImage}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    unoptimized
+                  />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="bg-white/20 backdrop-blur-md text-white border border-white/50 px-4 py-2 rounded-full font-semibold">
+                      Voir les photos
+                    </span>
+                  </div>
+                  {/* Badges */}
+                  <div className="absolute bottom-4 left-4 right-4 flex gap-2 pointer-events-none">
+                    <span className="bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                      {project.category}
+                    </span>
+                    <span className="bg-slate-800 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                      {project.location}
                     </span>
                   </div>
                 </div>
 
                 {/* Card body */}
-                <div className="p-6">
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full"
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-bold text-slate-800 mb-2">{project.title}</h3>
+                  <p className="text-slate-600 mb-4 text-sm flex-grow">{project.description}</p>
+                  <div className="flex justify-between items-center mt-auto">
+                    <div className="flex items-center text-green-600 text-sm font-semibold">
+                      <svg
+                        className="w-4 h-4 mr-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
                       >
-                        {tag}
-                      </span>
-                    ))}
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {project.date}
+                    </div>
+                    <button
+                      onClick={() => openGallery(project.gallery, 0)}
+                      className="text-sm font-bold text-slate-700 hover:text-green-600 underline cursor-pointer"
+                    >
+                      Voir la galerie ({project.gallery.length})
+                    </button>
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Testimonials */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Avis de nos clients</h2>
-            <p className="section-subtitle max-w-2xl mx-auto">
-              La satisfaction de nos clients est notre meilleure récompense.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <div
-                key={i}
-                className="bg-[#f9f9f7] rounded-2xl p-6 border border-gray-100 shadow-sm"
+            {/* CTA Card */}
+            <article className="bg-slate-800 rounded-2xl overflow-hidden shadow-lg flex flex-col justify-center items-center text-center p-8 text-white h-full min-h-[300px]">
+              <div className="mb-4 text-5xl">👷‍♂️</div>
+              <h3 className="text-xl font-bold mb-4">Votre projet ici ?</h3>
+              <p className="text-slate-300 mb-6">
+                Confiez-nous vos travaux d&apos;isolation ou de rénovation. Devis gratuit sous 48h.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-md transition-colors duration-200"
               >
-                <div className="flex items-center gap-1 mb-3">
-                  {Array.from({ length: t.rating }).map((_, j) => (
-                    <span key={j} className="text-[#f5a623] text-lg">
-                      ★
-                    </span>
-                  ))}
-                </div>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4 italic">
-                  &ldquo;{t.text}&rdquo;
-                </p>
-                <div className="border-t border-gray-200 pt-4">
-                  <p className="font-semibold text-gray-800">{t.name}</p>
-                  <p className="text-xs text-gray-500">
-                    {t.location} — {t.service}
-                  </p>
-                </div>
-              </div>
-            ))}
+                Commencer mon projet
+              </Link>
+            </article>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-[#1a6b3c] to-[#0f3320] text-white">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Votre projet sera notre prochaine référence !
-          </h2>
-          <p className="text-gray-200 text-lg mb-8 leading-relaxed">
-            Contactez-nous pour un devis gratuit et personnalisé. Nous intervenons en
-            Seine-Maritime et dans les départements voisins.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="tel:0612062868" className="btn-primary text-lg bg-white text-[#1a6b3c] hover:bg-gray-100">
-              📞 06 12 06 28 68
-            </a>
-            <Link href="/contact" className="btn-accent text-lg">
-              Demander un devis gratuit
-            </Link>
+      {/* Gallery Modal */}
+      {galleryOpen && galleryImages.length > 0 && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+        >
+          {/* Close button */}
+          <button
+            onClick={closeGallery}
+            className="absolute top-6 right-6 w-12 h-12 bg-white text-black hover:bg-gray-200 border-2 border-white z-50 flex items-center justify-center shadow-xl cursor-pointer transition-transform hover:scale-105"
+            aria-label="Fermer la galerie"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {/* Prev arrow */}
+          <button
+            onClick={prevImage}
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white p-4 hover:bg-white/10 rounded-lg transition-all z-50 group focus:outline-none"
+            aria-label="Image précédente"
+          >
+            <svg
+              className="w-12 h-12 md:w-20 md:h-20 group-hover:-translate-x-2 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Next arrow */}
+          <button
+            onClick={nextImage}
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white p-4 hover:bg-white/10 rounded-lg transition-all z-50 group focus:outline-none"
+            aria-label="Image suivante"
+          >
+            <svg
+              className="w-12 h-12 md:w-20 md:h-20 group-hover:translate-x-2 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Main content */}
+          <div className="w-full h-full flex flex-col items-center justify-center p-4 md:p-12">
+            <div className="relative w-full max-w-7xl max-h-[85vh] flex flex-col items-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={galleryImages[currentIndex].src}
+                alt={galleryImages[currentIndex].caption}
+                className="max-w-full max-h-[75vh] object-contain shadow-2xl"
+              />
+              <div className="mt-4 bg-black/60 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
+                <p className="text-white text-lg font-medium text-center">
+                  {galleryImages[currentIndex].caption}
+                </p>
+              </div>
+
+              {/* Thumbnails */}
+              <div className="flex gap-2 mt-6 overflow-x-auto max-w-full p-2 opacity-80 hover:opacity-100 transition-opacity">
+                {galleryImages.map((img, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrentIndex(i)}
+                    className={`shrink-0 w-16 h-16 rounded overflow-hidden border-2 transition-all ${
+                      i === currentIndex ? "border-white scale-110" : "border-transparent opacity-60 hover:opacity-100"
+                    }`}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={img.src} alt={img.caption} className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      )}
     </main>
   );
 }
