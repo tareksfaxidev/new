@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ISOL ECO LOGIS - Expert en rénovation et isolation énergétique en Normandie. Isolation par l'extérieur, ravalement de façade, rénovation intérieure. Certifié RGE Qualibat. Devis gratuit.">
+  <title>ISOL ECO LOGIS — Rénovation & Isolation Énergétique | Terres-de-Caux</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header Top -->
+  <div class="header-top">
+    <div class="container">
+      <div class="contact-info">
+        <a href="tel:0612062868">📞 06 12 06 28 68</a>
+        <a href="tel:0634974478">📞 06 34 97 44 78</a>
+        <a href="mailto:isol-eco-logis@outlook.com">✉️ isol-eco-logis@outlook.com</a>
+      </div>
+      <div class="social-links">
+        <a href="https://www.facebook.com/61565894874382/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/isol-eco-logis-90a623379/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Main -->
+  <header class="header-main">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">IEL</div>
+        <div class="logo-text">
+          <h1>ISOL ECO LOGIS</h1>
+          <p>Rénovation & Isolation Énergétique</p>
+        </div>
+      </a>
+      <nav class="nav-main" id="mainNav">
+        <a href="index.html" class="active">Accueil</a>
+        <a href="services.html">Nos Services</a>
+        <a href="isolation-exterieure.html">Isolation Extérieure</a>
+        <a href="ravalement-facade.html">Ravalement de Façade</a>
+        <a href="renovation-interieure.html">Rénovation Intérieure</a>
+        <a href="references.html">Références</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero Slider -->
+  <section class="hero">
+    <div class="hero-slide active" data-slide="0">
+      <img src="https://isol-eco-logis.com/images/slide1.jpg" alt="Artisan appliquant une isolation thermique sur une façade">
+      <div class="hero-content">
+        <div class="hero-content-inner">
+          <span class="hero-badge">Isolation & performance</span>
+          <h1 class="hero-title">ISOL ECO LOGIS, expert RGE en isolation durable</h1>
+          <p class="hero-desc">Solutions sur mesure pour optimiser le confort de votre habitat, réduire vos factures d'énergie et prolonger la vie de vos façades.</p>
+          <div class="hero-cta">
+            <a href="contact.html" class="btn btn-accent">Demander un devis</a>
+            <a href="services.html" class="btn btn-outline">Découvrir nos services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide" data-slide="1">
+      <img src="https://isol-eco-logis.com/images/slide2.jpg" alt="Échafaudage devant une façade en cours de rénovation">
+      <div class="hero-content">
+        <div class="hero-content-inner">
+          <span class="hero-badge">Façades rénovées</span>
+          <h1 class="hero-title">Ravalement & peinture pour un extérieur protégé</h1>
+          <p class="hero-desc">Nettoyage, traitement et finitions esthétiques pourredaunner de l'éclat durable à votre maison en Seine-Maritime.</p>
+          <div class="hero-cta">
+            <a href="services.html" class="btn btn-accent">Voir les prestations</a>
+            <a href="contact.html" class="btn btn-outline">Parler à un expert</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide" data-slide="2">
+      <img src="https://isol-eco-logis.com/images/slide3.jpg" alt="Technicien soufflant de l'isolant dans des combles">
+      <div class="hero-content">
+        <div class="hero-content-inner">
+          <span class="hero-badge">Confort intérieur</span>
+          <h1 class="hero-title">Isolation par soufflage rapide et efficace</h1>
+          <p class="hero-desc">Isoler vos combles en quelques heures avec des matériaux performants biosourcés pour un confort thermique immédiat.</p>
+          <div class="hero-cta">
+            <a href="contact.html" class="btn btn-accent">Prendre rendez-vous</a>
+            <a href="services.html" class="btn btn-outline">Nos services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Dots -->
+    <div class="hero-dots">
+      <button class="hero-dot active" onclick="goToSlide(0)"></button>
+      <button class="hero-dot" onclick="goToSlide(1)"></button>
+      <button class="hero-dot" onclick="goToSlide(2)"></button>
+    </div>
+    
+    <!-- Wave -->
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 60L1440 60L1440 0C1200 40 960 60 720 40C480 20 240 0 0 30L0 60Z" fill="#f9f9f7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Services Cards -->
+  <section class="section-gray">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Ce que nous faisons</span>
+        <h2 class="section-title">Nos Prestations</h2>
+        <p class="section-subtitle">Des solutions complètes pour améliorer la performance énergétique et l'esthétique de votre habitat.</p>
+      </div>
+      <div class="services-grid">
+        <!-- ITE -->
+        <div class="service-card">
+          <div class="service-card-img">
+            <img src="https://isol-eco-logis.com/images/slide1.jpg" alt="Isolation par l'extérieur">
+            <div class="service-card-overlay">
+              <h3>Isolation par l'Extérieur</h3>
+            </div>
+          </div>
+          <div class="service-card-body">
+            <p>Améliorez la performance énergétique de votre logement tout en modernisant votre façade. Réduisez jusqu'à 30% vos pertes de chaleur.</p>
+            <ul class="service-card-list">
+              <li><span>✓</span> Isolant synthétique haute performance</li>
+              <li><span>✓</span> Isolant naturel écologique</li>
+              <li><span>✓</span> Bardage bois ou PVC</li>
+            </ul>
+            <a href="isolation-exterieure.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">En savoir plus</a>
+          </div>
+        </div>
+
+        <!-- Ravalement -->
+        <div class="service-card">
+          <div class="service-card-img">
+            <img src="https://isol-eco-logis.com/images/slide2.jpg" alt="Ravalement de façade">
+            <div class="service-card-overlay" style="background: linear-gradient(to top, rgba(45,90,142,0.8), transparent);">
+              <h3>Ravalement de Façade</h3>
+            </div>
+          </div>
+          <div class="service-card-body">
+            <p>Redonnez vie à votre maison ! Nos prestations comprennent l'embellissement, la rénovation complète et la protection de vos façades.</p>
+            <ul class="service-card-list">
+              <li><span>✓</span> Embellissement des façades</li>
+              <li><span>✓</span> Rénovation complète</li>
+              <li><span>✓</span> Peinture et enduit</li>
+            </ul>
+            <a href="ravalement-facade.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">En savoir plus</a>
+          </div>
+        </div>
+
+        <!-- Rénovation intérieure -->
+        <div class="service-card">
+          <div class="service-card-img">
+            <img src="https://isol-eco-logis.com/images/slide3.jpg" alt="Rénovation intérieure">
+            <div class="service-card-overlay" style="background: linear-gradient(to top, rgba(142,74,45,0.8), transparent);">
+              <h3>Rénovation Intérieure</h3>
+            </div>
+          </div>
+          <div class="service-card-body">
+            <p>Nous intervenons pour tous vos travaux intérieurs avec des finitions soignées et un travail de qualité garanti.</p>
+            <ul class="service-card-list">
+              <li><span>✓</span> Peinture murs et plafonds</li>
+              <li><span>✓</span> Sols</li>
+              <li><span>✓</span> Réfection complète</li>
+            </ul>
+            <a href="renovation-interieure.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">En savoir plus</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notre mission -->
+  <section class="section-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Qui sommes-nous ?</span>
+        <h2 class="section-title">Une entreprise locale engagée pour la performance énergétique</h2>
+        <p class="section-subtitle">Basée à Terres-de-Caux (Fauville-en-Caux), ISOL ECO LOGIS accompagne les particuliers et professionnels de Normandie dans leurs projets d'isolation et de rénovation extérieure.</p>
+      </div>
+      
+      <div class="about-grid">
+        <div class="about-img">
+          <img src="https://isol-eco-logis.com/images/ISO%20ECO%20LOGIS.png" alt="Chantier ISOL ECO LOGIS">
+        </div>
+        <div class="about-content">
+          <div class="mission-card">
+            <h3>Notre mission</h3>
+            <p>Depuis 2024, nous concilions <strong>confort intérieur</strong>, <strong>économies d'énergie</strong> et respect de l'environnement. Notre approche globale nous permet de traiter l'enveloppe de votre bâtiment dans son ensemble.</p>
+            <ul>
+              <li><span>✓</span> Études thermiques et conseils personnalisés avant travaux</li>
+              <li><span>✓</span> Mise en œuvre par nos propres équipes qualifiées</li>
+              <li><span>✓</span> Accompagnement complet pour les démarches administratives</li>
+              <li><span>✓</span> Engagement qualité et satisfaction client</li>
+            </ul>
+          </div>
+          
+          <div class="highlights-grid">
+            <div class="highlight-item">
+              <div class="highlight-badge">RGE</div>
+              <div class="highlight-text">
+                <h4>Certifié QUALIBAT</h4>
+                <p>Travaux éligibles aux aides de l'État</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-badge">+2</div>
+              <div class="highlight-text">
+                <h4>Ans d'expérience</h4>
+                <p>Maîtrise technique et finitions soignées</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-badge">76</div>
+              <div class="highlight-text">
+                <h4>Local & Réactif</h4>
+                <p>Intervention rapide en Normandie</p>
+              </div>
+            </div>
+          </div>
+          
+          <a href="contact.html" class="btn btn-accent">Obtenir mon devis gratuit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section-primary">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-value">30%</div>
+          <div class="stat-label">Réduction des pertes de chaleur</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">RGE</div>
+          <div class="stat-label">Certifié Qualibat</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">Devis gratuit & personnalisé</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">CEE</div>
+          <div class="stat-label">Prime déduite du devis</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notre processus -->
+  <section class="section-gray">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Simple et rapide</span>
+        <h2 class="section-title">Comment ça marche ?</h2>
+        <p class="section-subtitle">De la prise de contact à la réception des travaux, nous vous accompagnons à chaque étape.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-item">
+          <div class="process-step">01</div>
+          <div class="process-icon">📞</div>
+          <h4>Prise de contact</h4>
+          <p>Appelez-nous ou remplissez le formulaire. Nous vous répondons sous 24h.</p>
+        </div>
+        <div class="process-item">
+          <div class="process-step">02</div>
+          <div class="process-icon">🔍</div>
+          <h4>Visite & diagnostic</h4>
+          <p>Nos experts se déplacent gratuitement pour évaluer votre projet.</p>
+        </div>
+        <div class="process-item">
+          <div class="process-step">03</div>
+          <div class="process-icon">📋</div>
+          <h4>Devis personnalisé</h4>
+          <p>Vous recevez un devis détaillé, transparent et sans engagement.</p>
+        </div>
+        <div class="process-item">
+          <div class="process-step">04</div>
+          <div class="process-icon">🏗️</div>
+          <h4>Réalisation</h4>
+          <p>Nos équipes qualifiées réalisent les travaux dans les délais convenus.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Témoignages -->
+  <section class="section-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Ils nous font confiance</span>
+        <h2 class="section-title">Avis de nos clients</h2>
+        <p class="section-subtitle">La satisfaction de nos clients est notre meilleure récompense.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"Excellent travail ! L'équipe d'ISOL ECO LOGIS a réalisé l'isolation extérieure de notre maison en un temps record. Résultat impeccable et économies d'énergie visibles dès la première facture."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">M</div>
+            <div class="testimonial-info">
+              <h4>Marie-Claire D.</h4>
+              <p>Fauville-en-Caux · Isolation par l'Extérieur</p>
+            </div>
+          </div>
+          <div class="testimonial-quote">"</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"Très professionnel du début à la fin. Le ravalement de notre façade a transformé notre maison. Les artisans sont soigneux, ponctuels et le résultat est magnifique. Je recommande vivement !"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">J</div>
+            <div class="testimonial-info">
+              <h4>Jean-Pierre M.</h4>
+              <p>Yvetot · Ravalement de Façade</p>
+            </div>
+          </div>
+          <div class="testimonial-quote">"</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"Rénovation complète de notre salon et cuisine. Travail de qualité, finitions parfaites. L'équipe a été à l'écoute de nos souhaits et a su nous conseiller. Très satisfaite !"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">S</div>
+            <div class="testimonial-info">
+              <h4>Sophie L.</h4>
+              <p>Bolbec · Rénovation Intérieure</p>
+            </div>
+          </div>
+          <div class="testimonial-quote">"</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Réalisations récentes -->
+  <section class="section-gray">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Nos chantiers</span>
+        <h2 class="section-title">Réalisations Récentes</h2>
+        <p class="section-subtitle">Découvrez quelques-uns de nos projets réalisés en Normandie.</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="https://isol-eco-logis.com/images/slide1.jpg" alt="Isolation extérieure maison individuelle">
+          <div class="project-overlay">
+            <h4>ITE — Maison individuelle</h4>
+            <p>📍 Seine-Maritime</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://isol-eco-logis.com/images/slide2.jpg" alt="Ravalement de façade">
+          <div class="project-overlay">
+            <h4>Ravalement — Façade rénovée</h4>
+            <p>📍 Normandie</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://isol-eco-logis.com/images/slide3.jpg" alt="Isolation par soufflage">
+          <div class="project-overlay">
+            <h4>Isolation soufflage — Combles</h4>
+            <p>📍 Seine-Maritime</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="references.html" class="btn btn-primary">Voir toutes nos réalisations →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact form section -->
+  <section class="section-white" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="section-tag">Devis gratuit</span>
+          <h2 class="section-title">Contactez-nous</h2>
+          <p>Vous avez un projet de rénovation ou d'isolation ? Remplissez le formulaire et nous vous recontacterons rapidement pour étudier votre projet et vous proposer un devis personnalisé et sans engagement.</p>
+          
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h3>Téléphone</h3>
+              <a href="tel:0612062868">06 12 06 28 68</a>
+              <span style="color:#999;margin:0 8px;">·</span>
+              <a href="tel:0634974478">06 34 97 44 78</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <h3>Email</h3>
+              <a href="mailto:isol-eco-logis@outlook.com">isol-eco-logis@outlook.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h3>Zone d'intervention</h3>
+              <p>76640 Terres-de-Caux — Normandie et alentours</p>
+            </div>
+          </div>
+          
+          <div class="contact-rge">
+            <h3>🏆 Certifié RGE Qualibat</h3>
+            <p>Notre certification vous permet de bénéficier des aides de l'État (Prime CEE). Nous gérons toutes les démarches administratives pour vous.</p>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <h2>Demande de Devis Gratuit</h2>
+          <p style="color:#666;margin-bottom:20px;">Remplissez ce formulaire et nous vous recontacterons rapidement.</p>
+          <form id="contactFormHome">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="home-name">Nom complet <span>*</span></label>
+                <input type="text" id="home-name" name="name" required placeholder="Jean Dupont">
+              </div>
+              <div class="form-group">
+                <label for="home-phone">Téléphone <span>*</span></label>
+                <input type="tel" id="home-phone" name="phone" required placeholder="06 XX XX XX XX">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="home-email">Email</label>
+              <input type="email" id="home-email" name="email" placeholder="jean.dupont@email.com">
+            </div>
+            <div class="form-group">
+              <label for="home-service">Service souhaité <span>*</span></label>
+              <select id="home-service" name="service" required>
+                <option value="">Sélectionnez un service</option>
+                <option value="ite">Isolation par l'Extérieur (ITE)</option>
+                <option value="ravalement">Ravalement de Façade</option>
+                <option value="renovation">Rénovation Intérieure</option>
+                <option value="autre">Autre / Plusieurs services</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="home-message">Votre message <span>*</span></label>
+              <textarea id="home-message" name="message" rows="4" required placeholder="Décrivez votre projet (type de logement, surface, travaux souhaités...)"></textarea>
+            </div>
+            <div class="form-note">
+              ✔ Devis gratuit et sans engagement — Réponse sous 24h
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Envoyer ma demande de devis</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <div class="logo">
+              <div class="logo-icon">IEL</div>
+              <div class="logo-text">
+                <h1 style="color:white;">ISOL ECO LOGIS</h1>
+                <p style="color:#999;">Rénovation & Isolation Énergétique</p>
+              </div>
+            </div>
+            <p>Votre expert en rénovation et isolation énergétique. Nous améliorons votre confort thermique, réduisons vos factures d'énergie et valorisons votre bien immobilier.</p>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/61565894874382/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/isol-eco-logis-90a623379/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-nav">
+            <h3>Navigation</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="services.html">Nos Services</a></li>
+              <li><a href="isolation-exterieure.html">Isolation par l'Extérieur</a></li>
+              <li><a href="ravalement-facade.html">Ravalement de Façade</a></li>
+              <li><a href="renovation-interieure.html">Rénovation Intérieure</a></li>
+              <li><a href="references.html">Références</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>Contact</h3>
+            <p>📞 <a href="tel:0612062868">06 12 06 28 68</a></p>
+            <p>📞 <a href="tel:0634974478">06 34 97 44 78</a></p>
+            <p>✉️ <a href="mailto:isol-eco-logis@outlook.com">isol-eco-logis@outlook.com</a></p>
+            <p>📍 76640 Terres-de-Caux</p>
+            <div class="footer-badge">
+              <p>✔ Certifié RGE Qualibat</p>
+              <p>Devis gratuit & personnalisé</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2024 ISOL ECO LOGIS — Tous droits réservés | 76640 Terres-de-Caux</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Hero Slider
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+    const totalSlides = slides.length;
+
+    function goToSlide(index) {
+      slides.forEach(s => s.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      
+      currentSlide = index;
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+      goToSlide((currentSlide + 1) % totalSlides);
+    }
+
+    // Auto advance
+    setInterval(nextSlide, 5000);
+
+    // Mobile Menu
+    function toggleMenu() {
+      document.getElementById('mainNav').classList.toggle('mobile-open');
+    }
+
+    // Form handling
+    document.getElementById('contactFormHome')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Merci pour votre demande ! Notre équipe vous contactera dans les plus brefs délais.\n\nEn attendant, vous pouvez nous appeler directement au :\n📞 06 12 06 28 68\n📞 06 34 97 44 78');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
